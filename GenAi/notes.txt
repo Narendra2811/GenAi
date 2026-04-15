@@ -1,0 +1,3 @@
+--> Temperature is parameter the control randomness of  a language model's output ..( 0.0 - 2.0)
+   lower value (0.0 - 0.3) - more deterministic and predictable
+   higher value (0.7 -1.5 ) - more random , creatvie and diverse

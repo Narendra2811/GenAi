@@ -1,0 +1,10 @@
+Prompt Template
+
+
+A PromptTemplate in LangChain is a structured way to create prompts dynamically by inserting variables into a predefined template. Instead of hardcoding prompts, PromptTemplate allows you to define placeholders that can be filled in at runtime with different inputs.
+This makes it reusable, flexible, and easy to manage, especially when working with dynamic user inputs or automated workflows.
+Why use PromptTemplate over f-strings?
+
+Default validation(if template ma 3 variable hoy and input_variable list ma 2 var j hoy eva case ne handle kare)
+Reusable  (template.json)
+langchain ecosystem  ma set thai jay ( exameple chain )
