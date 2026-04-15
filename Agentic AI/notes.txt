@@ -1,0 +1,86 @@
+in Langgraph we break high goal into small set of task and represent
+it using graph and in graph every node represent task 
+and edge represent execution order
+
+and graph ne execute karva mate set of instruction joiye
+apde ene state ma store kariye
+
+graph no nature evo che ke apde ene state apiye ae aema change
+karse ane end ma apdne final state madse but jevo workflow
+end thay che aa final state memory ma thi remove thai jay
+ che and farithi invoke karta state scratch thi start thay che
+ aa this memeory nthi mdti graph ne aa promblem persistence
+ this solve kari sakay
+
+ persistence gives also us feature like fault-tolerance
+ if execution half way thi crash thay che to jyare farithi start
+ kariye atle jyathi stop thyu che tya thi start thay nhi ke 
+ start thi
+
+ checkPointer in persistence is like debug point --> darek 
+ checkPointer mate ae moment no state stroe thay
+
+ thread in persistence is like unique id for every execution
+to get state stroe information for particular execution
+
+benefit of persistence is --> human in the loop
+                          --> memory
+                          --> fault tolerance
+                          --> time travel
+
+
+
+
+HUMAN-IN-THE-LOOP (LangGraph) — QUICK REVISION
+
+1. interrupt()
+
+* pauses graph execution
+* returns "**interrupt**" in response
+* can send structured data (dict)
+
+2. Resume
+
+* use Command(resume=value)
+* value is returned inside interrupt()
+* execution continues from same line
+
+3. Flow
+   Graph → interrupt → stop
+   User input → Command(resume=...) → continue
+
+4. Key Requirements
+
+* checkpointer (mandatory)
+* thread_id (mandatory)
+
+5. Important Concepts
+
+* resume value = interrupt return value
+* execution resumes exactly where paused
+* supports multiple interrupts
+
+6. Use Cases
+
+* user approval
+* confirmation steps
+* human correction
+* tool validation
+
+7. Common Errors
+
+* no checkpointer → resume fails
+* wrong thread_id → wrong state
+* using llm() instead of invoke()
+
+Memory Trick:
+interrupt = pause + wait for human
+resume = continue with human input
+
+
+
+    
+    
+    
+    
+        
